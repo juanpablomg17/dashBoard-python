@@ -74,7 +74,6 @@ def product_detail(request, pk):
 
 
 @login_required(login_url='user-login')
-@allowed_users(allowed_roles=['Admin'])
 def customers(request):
     customer = User.objects.filter(groups=2)
     customer_count = customer.count()
@@ -92,7 +91,6 @@ def customers(request):
 
 
 @login_required(login_url='user-login')
-@allowed_users(allowed_roles=['Admin'])
 def customer_detail(request, pk):
     customer = User.objects.filter(groups=2)
     customer_count = customer.count()
@@ -112,7 +110,6 @@ def customer_detail(request, pk):
 
 
 @login_required(login_url='user-login')
-@allowed_users(allowed_roles=['Admin'])
 def product_edit(request, pk):
     item = Product.objects.get(id=pk)
     if request.method == 'POST':
@@ -129,7 +126,6 @@ def product_edit(request, pk):
 
 
 @login_required(login_url='user-login')
-@allowed_users(allowed_roles=['Admin'])
 def product_delete(request, pk):
     item = Product.objects.get(id=pk)
     if request.method == 'POST':

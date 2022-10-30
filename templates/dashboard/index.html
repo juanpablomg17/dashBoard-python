@@ -60,10 +60,10 @@
                     var myChart = new Chart(ctx, {
                         type: 'bar',
                         data: {
-                            labels: [{% for order in order %} '{{order.name}}',{% endfor %}],
+                            labels: [{% for product in product %} '{{product.name}}',{% endfor %}],
                     datasets: [{
-                        label: 'Orders',
-                        data: [{% for order in order %} {{ order.order_quantity }}, {% endfor %}],
+                        label: 'Products',
+                        data: [{% for product in product %} {{ product.quantity }}, {% endfor %}],
                         backgroundColor: [
                             'rgba(255, 99, 132, 1)',
                             'rgba(54, 162, 235, 1)',
