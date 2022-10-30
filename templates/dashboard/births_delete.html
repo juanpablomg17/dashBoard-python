@@ -1,12 +1,12 @@
 {% extends 'partials/base.html' %}
-{% block title %}Product Delete Page{% endblock %}
+{% block title %}Birth Delete Page{% endblock %}
 
 {% block content %}
 
 <div class="row my-4">
     <div class="col-md-6 offset-md-3">
         <div class="border p-3 bg-white">
-            <h3>Delete Item</h3>
+            <h3>Delete Birth data</h3>
             <hr>
             <form method="POST">
                 <div class="alert alert-danger">
@@ -14,7 +14,7 @@
                 </div>
                 {% csrf_token %}
                 {{ form }}
-                <a class="btn btn-secondary btn-sm" href="{% url 'dashboard-products' %}">Cancel</a>
+                <a class="btn btn-secondary btn-sm" href="{% url 'dashboard-births' %}">Cancel</a>
                 <input class="btn btn-danger btn-sm" type="submit" value="Confirm">
             </form>
         </div>

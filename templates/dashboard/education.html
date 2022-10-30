@@ -1,5 +1,5 @@
 {% extends 'partials/base.html' %}
-{% block title %}Products Page{% endblock %}
+{% block title %}Tasa de defunciones{% endblock %}
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -14,7 +14,7 @@
         {% endfor %}
         {% endif %}
         <div class="card card-body">
-            <h5>Tasa Defunciones en Cartagena</h5>
+            <h5>Tasa de matricula escolar</h5>
             <hr>
             <form method="POST">
                 {% csrf_token %}
@@ -29,21 +29,21 @@
                 <tr>
                     <th scope="col">Año</th>
                     <th scope="col">Categoría</th>
-                    <th scope="col">Cantidad de muertos</th>
+                    <th scope="col">Cantidad de matriculas por año</th>
                     <th scope="col">Activity</th>
                 </tr>
             </thead>
             <tbody>
-                {% for product in product %}
+                {% for education in education %}
                 <tr>
-                    <td>{{ product.year }}</td>
-                    <td>{{ product.categoria }}</td>
-                    <td>{{ product.cantidad }}</td>
+                    <td>{{ education.year }}</td>
+                    <td>{{ education.categoria }}</td>
+                    <td>{{ education.cantidad }}</td>
                     <td>
                         <a class="btn btn-info btn-sm mr-2"
-                            href="{% url 'dashboard-products-edit' product.id %}">Edit</a>
+                            href="{% url 'dashboard-educations-edit' education.id %}">Edit</a>
                         <a class="btn btn-danger btn-sm ml-2"
-                            href="{% url 'dashboard-products-delete' product.id %}">Delete</a>
+                            href="{% url 'dashboard-educations-delete' education.id %}">Delete</a>
                     </td>
                 </tr>
                 {% endfor %}
