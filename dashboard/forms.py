@@ -1,15 +1,9 @@
 from django import forms
-from .models import Product, Order
+from .models import Death
 
 
 class ProductForm(forms.ModelForm):
     class Meta:
-        model = Product
+        model = Death
         fields = '__all__'
 
-
-class OrderForm(forms.ModelForm):
-
-    class Meta:
-        model = Order
-        fields = ['name', 'order_quantity']

@@ -27,7 +27,7 @@
         <table class="table bg-white">
             <thead class="bg-info text-white">
                 <tr>
-                    <th scope="col">Name</th>
+                    <th scope="col">Año</th>
                     <th scope="col">Categoría</th>
                     <th scope="col">Cantidad de muertos</th>
                     <th scope="col">Activity</th>
@@ -36,9 +36,9 @@
             <tbody>
                 {% for product in product %}
                 <tr>
-                    <td>{{ product.name }}</td>
-                    <td>{{ product.category }}</td>
-                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.year }}</td>
+                    <td>{{ product.categoria }}</td>
+                    <td>{{ product.cantidad }}</td>
                     <td>
                         <a class="btn btn-info btn-sm mr-2"
                             href="{% url 'dashboard-products-edit' product.id %}">Edit</a>
